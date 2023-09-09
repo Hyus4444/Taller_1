@@ -1,54 +1,59 @@
-/*!
-* Start Bootstrap - Freelancer v7.0.7 (https://startbootstrap.com/theme/freelancer)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
+var posY = 0
+var gravedad = 0
+var tiempo = 100
 
-window.addEventListener('DOMContentLoaded', event => {
+function simulacion() {
+    interval = setInterval(function () {
+        document.querySelector("#object").style.marginTop = posY + 'px'
+        posY += 1
+        if (posY > 320 )   {
+            posY = 0
+            clearInterval(interval)
+            clearInterval(interval)
 
-    // Navbar shrink function
-    var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
         }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
-        } else {
-            navbarCollapsible.classList.add('navbar-shrink')
-        }
+    }, gravedad);
+}
 
-    };
+function reiniciar() {
+    posY = 0
+    clearInterval(interval)
+    document.querySelector("#object").style.marginTop = '0px'
+}
 
-    // Shrink the navbar 
-    navbarShrink();
+function setgrav(a) {
+    switch (a) {
+        case 1:
+            document.querySelector("#about").style.backgroundImage= url('assets\img\Fondos\LunaBGD.jpg') 
+            return gravedad = 100;
 
-    // Shrink the navbar when page is scrolled
-    document.addEventListener('scroll', navbarShrink);
+            break;
+        case 2:
+            return gravedad = 200;
 
-    // Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            rootMargin: '0px 0px -40%',
-        });
-    };
+        case 3:
+            return gravedad = 10;
 
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
-        });
-    });
 
-});
+        case 4:
+            return gravedad = 50;
+
+        case 5:
+            return gravedad = 2000;
+
+        case 6:
+            return gravedad = 1;
+
+        default:
+            break;
+    }
+
+}
+
+
+
+
+
+
+
+
