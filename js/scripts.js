@@ -1,54 +1,49 @@
 var posY = 0
-var gravedad = 0
+var gravedad = 9.8
 var tiempo = 100
+var velocidad = 0
+var nombre=''
+let planeta= new Map();
 
-function simulacion() {
-    interval = setInterval(function () {
-        document.querySelector("#object").style.marginTop = posY + 'px'
-        posY += 1
-        if (posY > 320 )   {
+planeta.set("luna", 18.9)
+planeta.set("jupiter", 1.9)
+planeta.set("marte", 3.9)
+planeta.set("mercurio", )
+planeta.set("saturno", 5.9)
+planeta.set("tierra", 5.9)
+
+function simulacion(nombrePlaneta) { 
+    $( ".fondo" ).removeClass(nombre).addClass(nombrePlaneta)   
+    $("#titulo >h1").append(planeta.get(nombrePlaneta))
+    nombre=nombrePlaneta
+    $(".fondo").addClass(nombrePlaneta);
+    console.log(planeta.get(nombrePlaneta))
+
+    $("#object").on("click", 
+    function () {
+        interval = setInterval(
+        function () {        
+        document.querySelector("#object").style.marginTop = posY + 'px'        
+        posY+=5
+        if (posY >= 320) {
             posY = 0
             clearInterval(interval)
-            clearInterval(interval)
-
         }
-    }, gravedad);
+
+    }, planeta.get(nombrePlaneta) *10);
+})
+    
 }
+    
+
 
 function reiniciar() {
     posY = 0
+    $(".fondo").removeClass(nombre).addClass("fondo");        
     clearInterval(interval)
     document.querySelector("#object").style.marginTop = '0px'
 }
 
-function setgrav(a) {
-    switch (a) {
-        case 1:
-            document.querySelector("#about").style.backgroundImage= url('assets\img\Fondos\LunaBGD.jpg') 
-            return gravedad = 100;
-
-            break;
-        case 2:
-            return gravedad = 200;
-
-        case 3:
-            return gravedad = 10;
-
-
-        case 4:
-            return gravedad = 50;
-
-        case 5:
-            return gravedad = 2000;
-
-        case 6:
-            return gravedad = 1;
-
-        default:
-            break;
-    }
-
-}
 
 
 

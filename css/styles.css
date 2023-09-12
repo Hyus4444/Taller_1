@@ -4,6 +4,41 @@
   background-color: #121212;
 }
 
+.luna{
+  background-image: url(../assets/img/Fondos/LunaBGD.jpg);
+  background-repeat: no-repeat;
+  background-size: 118%;
+  
+}
+
+.jupiter{
+  background-image: url(../assets/img/Fondos/JupiterBGD.jpg);
+  background-repeat: no-repeat;
+  background-size: 118%;
+}
+.marte{
+  background-image: url(../assets/img/Fondos/MarteBGD.jpg);
+  background-repeat: no-repeat;
+  background-size: 118%;
+}
+.mercurio{
+  background-image: url(../assets/img/Fondos/MercurioBGD.jpg);
+  background-repeat: no-repeat;
+  background-size: 118%;
+}
+.saturno{
+  background-image: url(../assets/img/Fondos/SaturnoBGD.jpg);
+  background-repeat: no-repeat;
+  background-size: 118%;
+}
+
+.tierra{
+  background-image: url(../assets/img/Fondos/TierraBGD.jpg);
+  background-repeat: no-repeat;
+  background-size: 118%;
+}
+
+
 #container {
   width: 300px;
   height: 400px;
